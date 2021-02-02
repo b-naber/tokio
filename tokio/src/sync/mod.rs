@@ -456,6 +456,9 @@ cfg_sync! {
     pub(crate) use task::AtomicWaker;
 
     pub mod watch;
+
+    pub mod once_cell;
+    pub use self::once_cell::OnceCell;
 }
 
 cfg_not_sync! {

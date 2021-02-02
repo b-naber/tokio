@@ -7,7 +7,7 @@ edition = "2018"
 # If you copy one of the examples into a new project, you should be using
 # [dependencies] instead.
 [dev-dependencies]
-tokio = { version = "1.0.0", features = ["full", "tracing"] }
+tokio = { path = "../tokio" }
 tokio-util = { version = "0.6.1", features = ["full"] }
 tokio-stream = { version = "0.1" }
 
@@ -77,3 +77,11 @@ path = "custom-executor.rs"
 [[example]]
 name = "custom-executor-tokio-context"
 path = "custom-executor-tokio-context.rs"
+
+[[example]]
+name = "playground"
+path = "playground.rs"
+
+[[example]]
+name = "once_cell"
+path = "once_cell.rs"
