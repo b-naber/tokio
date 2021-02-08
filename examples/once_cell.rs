@@ -22,20 +22,21 @@ async fn main() {
     let span = span!(Level::DEBUG, "main");
     let _enter = span.enter();
 
-    let once: OnceCell<u32> = OnceCell::new();
-    let once_arc = Arc::new(once);
-    let once_clone1 = once_arc.clone();
-    let once_clone2 = once_arc.clone();
+    //let once: OnceCell<u32> = OnceCell::new();
+    let once = Arc::new(OnceCell::new());
+    let once_clone1 = once.clone();
+    let once_clone2 = once.clone();
     let handle1 = tokio::spawn(async move {
         let result1 = once_clone1.get_or_init(call_async_fn).await;
-        debug!("result1: {:?}", result1);
-        result1
     });
     let handle2 = tokio::spawn(async move {
         let result2 = once_clone2.get_or_init(call_async_fn).await;
-        debug!("result2: {:?}", result2);
     });
 
     handle1.await;
     handle2.await;
+    let result = once.get();
+    if let Some(ref v) = result {
+        println!("result: {:?}", v);
+    }
 }
