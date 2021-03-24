@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1610665656822,
-  "repoUrl": "https://github.com/tokio-rs/tokio",
+  "lastUpdate": 1616627408622,
+  "repoUrl": "https://github.com/b-naber/tokio",
   "entries": {
     "sync_rwlock": [
       {
@@ -11779,6 +11779,54 @@ window.BENCHMARK_DATA = {
             "name": "yield_many",
             "value": 20500425,
             "range": "± 1903559",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "kai.jewson@gmail.com",
+            "name": "Kai Jewson",
+            "username": "KaiJewson"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0dc4769708279a076e01a66dc53ec226083c1bdb",
+          "message": "sync: add OwnedRwLockReadGuard and OwnedRwLockWriteGuard (#3340)",
+          "timestamp": "2021-03-23T13:40:17+01:00",
+          "tree_id": "f2176a8959a190799a3da96112d37904a10ad86e",
+          "url": "https://github.com/b-naber/tokio/commit/0dc4769708279a076e01a66dc53ec226083c1bdb"
+        },
+        "date": 1616627407533,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "chained_spawn",
+            "value": 161120,
+            "range": "± 2580",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "ping_pong",
+            "value": 634613,
+            "range": "± 35799",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "spawn_many",
+            "value": 4790525,
+            "range": "± 745341",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "yield_many",
+            "value": 19037956,
+            "range": "± 3694528",
             "unit": "ns/iter"
           }
         ]
